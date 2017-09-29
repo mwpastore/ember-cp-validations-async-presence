@@ -1,5 +1,15 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+Model is valid: {{v-get foo 'isValid'}}
+
+{{#each (v-get foo 'messages') as |message|}}
+  <div>{{message}}</div>
+{{/each}}
+
+<div>
+  <button onclick={{action 'setQux' foo}}>Set the foo.belongsTo('qux')</button>
+</div>
+
+<div>
+  <button onclick={{action 'addBar' foo}}>Add a foo.hasMany('bar')</button>
+</div>
 
 {{outlet}}
